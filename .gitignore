@@ -1,0 +1,17 @@
+# Ignore Python bytecode
+__pycache__/
+*.py[cod]
+
+# Ignore environment files
+.env
+venv/
+env/
+
+# Ignore database files
+db.sqlite3
+
+# Ignore Django migrations
+*/migrations/
+
+# Ignore Django secret key
+*.log
