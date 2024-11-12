@@ -1,0 +1,45 @@
+graph TD
+    subgraph Frontend
+        A1[Home Page]
+        A2[Booking Page]
+        A3[Confirmation Page]
+    end
+
+    subgraph Backend
+        B1[API - Get Hotels & Rooms]
+        B2[API - Book Room]
+        B3[API - Admin Panel]
+
+        subgraph Admin Functions
+            B4[Manage Hotels]
+            B5[Manage Rooms]
+            B6[Manage Bookings]
+        end
+    end
+
+    subgraph Database
+        D1[(Hotel)]
+        D2[(Room)]
+        D3[(Booking)]
+    end
+
+    %% User interactions
+    A1 -->|View All Hotels & Rooms| B1
+    A2 -->|Check Room Availability| B1
+    A2 -->|Book Room| B2
+    A3 -->|View Confirmation| B2
+
+    B1 --> D1
+    B1 --> D2
+    B2 --> D3
+
+    B4 -->|Add/Edit Hotels| D1
+    B5 -->|Add/Edit Rooms| D2
+    B6 -->|Add/Edit Bookings| D3
+
+    B3 --> B4
+    B3 --> B5
+    B3 --> B6
+
+    D1 --> D2
+    D2 --> D3

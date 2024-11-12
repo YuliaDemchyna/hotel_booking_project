@@ -1,0 +1,51 @@
+erDiagram
+    User ||--o{ Hotel : "manages"
+    Hotel ||--o{ Room : "has"
+    Room ||--o{ Booking : "has"
+
+    User {
+        int id PK
+        string username
+        string password
+        string email
+        boolean is_staff
+        boolean is_active
+        boolean is_superuser
+        datetime last_login
+        datetime date_joined
+    }
+
+    Hotel {
+        int id PK
+        int admin_id FK "References User"
+        string name
+        string address
+        string description
+        datetime created_at
+        datetime updated_at
+    }
+
+    Room {
+        int id PK
+        int hotel_id FK
+        string room_number
+        string room_type
+        decimal price_per_night
+        text description
+        boolean is_active
+        datetime created_at
+        datetime updated_at
+    }
+
+    Booking {
+        int id PK
+        int room_id FK
+        date check_in_date
+        date check_out_date
+        string guest_name
+        string guest_email
+        string guest_phone
+        enum status
+        datetime created_at
+        datetime updated_at
+    }
