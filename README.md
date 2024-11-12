@@ -5,6 +5,9 @@ Hey, it's nice to see you here :)
 We dont have The Well yet, but stay tuned! Instead it is Hotel1.
 Book your stay here (yes, i deployed it):  
 [https://yuliademchyna.pythonanywhere.com](https://yuliademchyna.pythonanywhere.com)
+On the website you call log in to admin panel with user: yuliademchyna and pass: test
+at [https://yuliademchyna.pythonanywhere.com/admin](https://yuliademchyna.pythonanywhere.com/admin)
+
 
 ## Architecture Diagram
 ![img.png](architecture_diagram.png)
