@@ -1,0 +1,14 @@
+{% extends 'booking/base.html' %}
+
+{% block content %}
+    <h2>Booking Confirmation</h2>
+    <p>Thank you, {{ booking.guest_name }}! Your booking has been confirmed.</p>
+    <ul class="booking-details">
+        <li><strong>Hotel:</strong> {{ booking.room.hotel.name }}</li>
+        <li><strong>Room:</strong> {{ booking.room.room_number }} - {{ booking.room.room_type }}</li>
+        <li><strong>Check-In:</strong> {{ booking.check_in_date }}</li>
+        <li><strong>Check-Out:</strong> {{ booking.check_out_date }}</li>
+        <li><strong>Status:</strong> {{ booking.status }}</li>
+    </ul>
+    <a href="{% url 'booking:home' %}">Back to Home</a>
+{% endblock %}

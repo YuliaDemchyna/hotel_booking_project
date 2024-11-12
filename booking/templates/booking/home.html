@@ -1,0 +1,17 @@
+{% extends 'booking/base.html' %}
+
+{% block content %}
+    <h2>Available Hotels</h2>
+    <ul class="hotel-list">
+        {% for hotel in hotels %}
+            <li class="hotel-item">
+                <h3>{{ hotel.name }}</h3>
+                <p><strong>Address:</strong> {{ hotel.address }}</p>
+                <p>{{ hotel.description }}</p>
+                <a href="{% url 'booking:hotel_detail' hotel.id %}">View Rooms</a>
+            </li>
+        {% empty %}
+            <li>No hotels available at the moment.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

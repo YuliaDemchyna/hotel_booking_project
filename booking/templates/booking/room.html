@@ -1,0 +1,16 @@
+{% extends 'booking/base.html' %}
+
+{% block content %}
+    <h2>Room {{ room.room_number }} - {{ room.room_type }}</h2>
+    <p>{{ room.description }}</p>
+    <p><strong>Price per Night:</strong> ${{ room.price_per_night }}</p>
+    <p><strong>Status:</strong> {% if room.is_active %}Available{% else %}Unavailable{% endif %}</p>
+
+    {% if room.is_active %}
+        <a href="{% url 'booking:book_room' room.hotel.id room.id %}">Book This Room</a>
+    {% else %}
+        <p>This room is currently unavailable for booking.</p>
+    {% endif %}
+
+    <a href="{% url 'booking:hotel_detail' room.hotel.id %}">Back to Hotel</a>
+{% endblock %}

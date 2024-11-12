@@ -1,17 +1,9 @@
-# Ignore Python bytecode
 __pycache__/
 *.py[cod]
+.idea/
 
-# Ignore environment files
-.env
-venv/
-env/
+new_env/
 
-# Ignore database files
 db.sqlite3
 
-# Ignore Django migrations
-*/migrations/
-
-# Ignore Django secret key
 *.log

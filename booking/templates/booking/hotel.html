@@ -1,0 +1,22 @@
+{% extends 'booking/base.html' %}
+
+{% block content %}
+    <h2>{{ hotel.name }}</h2>
+    <p><strong>Address:</strong> {{ hotel.address }}</p>
+    <p>{{ hotel.description }}</p>
+
+    <h3>Available Rooms</h3>
+    <ul class="room-list">
+        {% for room in rooms %}
+            <li class="room-item">
+                <h4>Room {{ room.room_number }} - {{ room.room_type }}</h4>
+                <p>{{ room.description }}</p>
+                <p><strong>Price per Night:</strong> ${{ room.price_per_night }}</p>
+                <a href="{% url 'booking:book_room' hotel.id room.id %}">Book This Room</a>
+            </li>
+        {% empty %}
+            <li>No rooms available for booking.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'booking:home' %}">Back to Home</a>
+{% endblock %}

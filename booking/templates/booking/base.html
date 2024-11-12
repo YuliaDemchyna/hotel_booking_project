@@ -1,0 +1,28 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Booking System</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'booking:home' %}">Hotel Booking System</a></h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'booking:home' %}">Home</a></li>
+                {% if user.is_staff %}
+                    <li><a href="{% url 'admin:index' %}">Admin Panel</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Hotel Booking</p>
+    </footer>
+</body>
+</html>
