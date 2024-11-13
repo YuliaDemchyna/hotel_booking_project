@@ -10,6 +10,9 @@ def home_page_view(request: HttpRequest) -> HttpResponse:
     hotels = Hotel.objects.all()
     return render(request, 'booking/home.html', {'hotels': hotels})
 
+def log_in_view(request: HttpRequest) -> HttpResponse:
+    return render(request, 'booking/log_in.html', )
+
 
 def hotel_detail_view(request: HttpRequest, hotel_id: int) -> HttpResponse:
     hotel = get_object_or_404(Hotel, id=hotel_id)
